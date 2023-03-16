@@ -1,0 +1,54 @@
+﻿@model Zapatilla
+
+@{
+    ViewData["Title"] = "_DetailsS";
+}
+
+<h1>Detalle Zapatilla</h1>
+<a asp-controller="Zapatilla"
+   asp-action="GetZapatillas">
+    Vuelta
+</a>
+<div>
+    <h4>Zapatilla</h4>
+    <hr />
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.IdProducto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.IdProducto)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Precio)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr/>
+
+
+</div>

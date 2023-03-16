@@ -1,0 +1,44 @@
+﻿@model List<Zapatilla>
+
+<table class="table table-warning">
+    <thead>
+        <tr>
+            
+            <th>
+                Nombre
+            </th>
+            
+           
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>
+                    @item.Nombre
+                </td>
+               
+                <td>
+                    <a asp-controller="Zapatilla"
+                   asp-action="ImagenZapatilla"
+                       class="list-group-item list-group-item-info"
+                   asp-route-posicion="1"
+                   asp-route-idproducto="@item.IdProducto">
+                        Detalles
+                    </a>
+                </td>
+             
+
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MvcNetCoreZapatillas.Models.ImagenZapatilla>
+
+@{
+    int numeroregistros = (int)ViewData["REGISTROS"];
+    int numeropagina = 1;
+    int id = (int)ViewData["IDPRODUCTO"];
+}
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            
+                $("#contenido").load("/Zapatilla/_DetailsS?idproducto=@id");
+            
+        })
+    </script>
+ }
+
+
+
+
+<div id="contenido"></div>
+
+
+
+<br />
+
+<ul class="list-group list-group-horizontal">
+    @for (int i = 1; i <= numeroregistros; i++)
+    {
+        <li class="list-group-item list-group-item-success">
+            <a asp-controller="Zapatilla"
+           asp-action="ImagenZapatilla"
+           asp-route-posicion="@i"
+           asp-route-idproducto="@id">
+                Página @numeropagina
+            </a>
+        </li>
+        numeropagina += 1;
+    }
+</ul>
+
+
+<table class="table">
+    <thead>
+        <tr>
+           
+            
+            <th>
+                Imagen
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+               
+                
+                <td>
+                    <img src="@item.Imagen" style="height:150px" />
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
